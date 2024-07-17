@@ -1,0 +1,66 @@
+Collaborate and Test the Timbu Shop App
+Material
+Timbu Cloud
+Timbu API Documentation
+
+
+Task
+This stage involves collaborating with mobile developers to test the Timbu Shop App, ensuring it meets quality standards.
+1. Collaboration and App Details
+App: Timbu Shop App, which involves the pixel-perfect implementation of designs from our design interns. The app integrates with the Timbu API.
+Developer Collaboration: Find a mobile developer to work with and understand the app and its functionalities. You can find the task the mobile developers are working on here.
+2. Test Case Development
+For the Timbu Shop App, write comprehensive test cases that cover the app's functionalities and potential scenarios. Consider the following:
+Positive Test Cases: Validate the app behaves as expected under normal conditions with valid inputs.
+Negative Test Cases: Verify the app handles invalid inputs or unexpected conditions gracefully (e.g., error messages, default behaviors).
+Edge Cases and Boundary Conditions: Explore the limits or extreme values of the app's inputs and expected behavior (e.g., empty inputs, maximum/minimum values).
+Status Codes: Ensure to check for appropriate status codes (e.g., 200, 201, 400, 404, 500).
+Use a standard test case template to ensure consistency.
+
+Key Areas to Test
+User Interface:
+Validate the pixel-perfect implementation of designs.
+Test for responsiveness and adaptive layouts.
+Verify proper UI state management and error handling.
+
+Functional Testing:
+Ensure all app features work as intended.
+Test API integrations with the Timbu API.
+
+Usability Testing:
+Assess the user experience, intuitiveness, and navigation of the app.
+
+
+Requirements
+Test Cases:
+Write test cases for the key areas to be tested.
+Ensure each test case is clear, detailed, and follows the template provided.
+Include checks for appropriate status codes in each test case.
+Submit the test cases in a Google Sheet.
+
+
+Testing:
+Conduct thorough usability and functional testing of the final app.
+Create a detailed test report in a Google Doc, outlining discoveries, feedback, and vulnerabilities.
+Include a link to the test cases Google Sheet in the report.
+
+
+Acceptance Criteria
+Test Cases:
+Must be detailed and follow the provided template.
+Should cover different scenarios, including positive and negative cases.
+Clear preconditions and steps to reproduce the tests.
+Check for appropriate status codes.
+The overall test case document should be well-organized, easy to understand, and demonstrate a good grasp of test case design principles.
+
+
+Test Report:
+The report should be comprehensive, highlighting feedback, vulnerabilities, and any discovered issues.
+The Google Doc should include a link to the Google Sheet containing the test cases.
+Submission Mode
+Submit your task through the designated submission form. Ensure you've:
+Include your test cases in a Google Sheet.
+Created a detailed test report in a Google Doc.
+Included a link to the test cases Google Sheet in the report.
+Ensured that both the Google Sheets and Google Docs are accessible to anyone without an access request.
+ 
