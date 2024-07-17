@@ -1,13 +1,17 @@
 API Testing & Test Cases Design
+
 Study Material
 Test Cases for Manual Testing
+
 Task
 This stage introduces you to API testing, an essential skill for QA professionals.
 Your task will be to write detailed test cases for various API endpoints provided by JSONPlaceholder.
+
 1. API Endpoints
 Review the JSONPlaceholder API documentation and guide.
 Test the endpoints using Postman and ensure you can fetch data, create new entries, update existing entries, and delete entries.
 Include nested endpoints to test relationships between resources.
+
 2. Test Cases
 For each selected endpoint, write comprehensive test cases that test their functionalities and potential scenarios. Consider the following:
 Positive Test Cases: Validate the endpoints behave as expected under normal conditions with valid inputs.
@@ -15,7 +19,9 @@ Negative Test Cases: Verify the endpoints handle invalid inputs or unexpected co
 Edge Cases and Boundary Conditions: Explore the limits or extreme values of the endpoint's inputs and expected behavior (e.g., empty inputs, maximum/minimum values).
 Status Codes: Ensure to check for appropriate status codes (e.g., 200, 201, 400, 404, 500).
 Use a standard test case template to ensure consistency.
-:key: Key Endpoints to Test
+
+Key Endpoints to Test
+
 Posts:
 GET /posts
 GET /posts/{id}
@@ -24,6 +30,7 @@ PUT /posts/{id}
 PATCH /posts/{id}
 DELETE /posts/{id}
 Nested: GET /posts/{id}/comments
+
 Comments:
 GET /comments
 GET /comments/{id}
@@ -32,6 +39,7 @@ PUT /comments/{id}
 PATCH /comments/{id}
 DELETE /comments/{id}
 Nested: GET /comments?postId={id}
+
 Users:
 GET /users
 GET /users/{id}
@@ -40,29 +48,40 @@ PUT /users/{id}
 PATCH /users/{id}
 DELETE /users/{id}
 Nested: GET /users/{id}/posts
-:scroll: Requirements
+
+ Requirements
 Test Cases:
 Write test cases for the selected API endpoints.
 Ensure each test case is clear, detailed, and follows the template provided.
 Include checks for appropriate status codes in each test case.
+
+
 Postman Collection:
 Create a Postman collection that includes all the API endpoints tested.
 Organize the collection into folders, one per API resource (e.g., Posts, Comments, Users).
 Each folder should contain requests for all the operations on that resource (GET, POST, PUT, PATCH, DELETE).
 Include test scripts in Postman to validate response status codes and basic response body structure. (Optional)
-:ballot_box_with_check: Acceptance Criteria
+
+ Acceptance Criteria
 Test Cases:
 Must be detailed and follow the provided template.
 Should cover different scenarios, including positive and negative cases.
 Clear preconditions and steps to reproduce the tests.
 Check for appropriate status codes.
+
 The overall test case document should be well-organized, easy to understand, and demonstrate a good grasp of test case design principles.
+
 Postman Collection:Organization: The collection is well-organized into folders, one per API resource.
+
 Completeness: All specified endpoints are included with appropriate requests.
+
 Testing: Each request includes test scripts to validate the status codes and response body. (Optional)
+
 Accessibility: The Postman collection link is shared and accessible without requesting access.
+
 Documentation: Include any necessary documentation or instructions within the Postman collection to guide users on how to use it.
 Test Case Template
+
 Here is a template for creating your test cases. Use this structure to document each test scenario:
 Test Case Description:…
 Preconditions:…
@@ -71,17 +90,14 @@ Expected Result:…
 Actual Result:….
 Status (Pass/Fail):…
 Comments:…
-:pushpin: Submission Mode
+
+ Submission Mode
 Submit your task through the designated submission form. Ensure you've:
 Included your test cases.
 Double-checked for completeness and adherence to the specified guidelines.
 Compiled your test cases into a document.
+
+
 Postman Collection:
 Create a Postman collection that includes all the API endpoints tested.
 Organize the collection into folders, one per API resource.
-Follow this tutorial to share your Postman collection: Share Collections with Guest Users.
-Attach the link to your Postman collection in the Google Docs file.
-Make sure that the Google document and the link to the Postman collection are accessible to anyone without a request for access.
-:checkered_flag: Submission Deadline
-The deadline for submissions is Tuesday, 9th July 2024, at 7:59 PM GMT+1. Late submissions will not be entertained.
-test-cases-template.png
