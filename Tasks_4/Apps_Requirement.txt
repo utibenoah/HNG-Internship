@@ -1,0 +1,30 @@
+Task: Add and Complete all Features of your Timbu Shop App.
+
+
+Objectives: add and complete features like the ability to add and remove products from cart, checkout the order. a simulated payment flow, order confirmation and an orders history Screen.
+
+
+Requirements:
+All products must be fetched from the Timbu API. No Placeholder should be found in your app.
+Have at least 20 Unique Products in your product list. They should be categorized.
+Implement the feature of adding and removing products, wishlist or bookmark, checkout of order e.t.c based on your timbu shop design.
+Good shopping experience from start to the completion of an order.
+Create an Orders history screen i.e showing all the completed orders made on your timbu shop. Add an icon on your home screen top bar that navigates to the order history screen. Come up with the design if not available.
+The Orders history item when clicked must go to a details screen of that order and show details of that order.
+The items in the order history screen and details should be cached in a database.
+Proper UI state management and handle errors properly.
+Fix all noticeable issues.
+
+
+Acceptance Criteria:
+Use Only Necessary Third-party Dependencies: Ensure that the application is built using only the necessary third-party packages, plugins, or libraries.
+Intuitive and Adaptive UI: The application should have a user-friendly and intuitive user interface, with clear labelling and spacing.
+Proper README File: it should contain proper setup instructions, app screenshots, apk download link e.t.c.
+QA Tester: You must find a QA tester to collaborate with on the testing of your task.
+
+
+Submission Requirements:
+GitHub Repository: Host your application's source code on your GitHub repository.
+Appetize.io Showcase: Use Appetize.io to provide a virtualized demonstration of the release version of your app and ensure it doesn't crash when launching the app.
+Apk File Download Link: Host your apk files and provide a download link.
+QA Test cases: Submit your QA test cases result sheet.

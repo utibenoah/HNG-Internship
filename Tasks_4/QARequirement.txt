@@ -1,0 +1,37 @@
+Objectives
+Collaborate with mobile and backend interns to ensure the Timbu Shop Apps and the boilerplates APIs meet quality standards and acceptance criteria.
+
+Requirements
+Mobile Collaboration: Continue collaborating with mobile interns to test the Timbu Shop App, ensuring it meets the new features and requirements added in Stage 4.
+Backend Collaboration: Join a backend team to test the APIs implemented. Each team member implements the ticket in their preferred language/stack.
+
+Testing
+API Testing:
+Test APIs implemented by backend developers to ensure they meet the acceptance criteria outlined in the GitHub ticket.
+Validate API functionality, including positive and negative test cases.
+Ensure appropriate status codes (e.g., 200, 201, 400, 404, 500).
+Check for edge cases and boundary conditions.
+Use tools Postman to create and run test collections.
+
+App Testing:
+Conduct thorough usability and functional testing of the Timbu Shop Apps.
+Validate UI implementation, responsiveness, and error handling.
+Test new features added in Stage Four, such as cart management, checkout, payment flow, order confirmation, and order history.
+
+
+Deliverables
+Test Cases: Write detailed and comprehensive test cases for both app and API testing.
+Submit test cases in a Google Sheet.
+Test Report: Create a detailed test report in a Google Doc, outlining discoveries, feedback, and vulnerabilities.
+Include a link to the test cases Google Sheet in the report.
+
+Acceptance Criteria
+
+Test Cases:
+Must cover different scenarios, including positive and negative cases.
+Should include checks for appropriate status codes and edge cases.
+Well-organized, easy to understand, and demonstrate a good grasp of test case design principles.
+
+Test Report:
+Comprehensive, highlighting feedback, vulnerabilities, and discovered issues.
+Includes a link to the Google Sheet containing the test cases.
