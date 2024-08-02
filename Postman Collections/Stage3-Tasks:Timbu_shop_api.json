@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "880a2470-559f-488e-a556-10f4767bf98b",
+		"name": "Stage3-Tasks:Timbu_shop_api",
+		"description": "- Test API integrations with the Timbu API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d73da421-b0be-4f0b-b24a-f85a49c81eb5",
+						"exec": [
+							"\r",
+							"\r",
+							"pm.test('Response time to be below 5000', ()=>{\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000)\r",
+							"})\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "757b85fe-fb37-47b7-a043-c53ffa410cdf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.timbu.cloud/products?organization_id=87b54cc3c6b74a2e9702f0e619bb07ee&Appid=Q5UQE24NAYJYR9P&Apikey=a41d510ece2645578f212abdbc49921e20240705063929453410",
+					"protocol": "https",
+					"host": [
+						"api",
+						"timbu",
+						"cloud"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "organization_id",
+							"value": "87b54cc3c6b74a2e9702f0e619bb07ee"
+						},
+						{
+							"key": "Appid",
+							"value": "Q5UQE24NAYJYR9P"
+						},
+						{
+							"key": "Apikey",
+							"value": "a41d510ece2645578f212abdbc49921e20240705063929453410"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Product with empty params",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d73da421-b0be-4f0b-b24a-f85a49c81eb5",
+						"exec": [
+							"let res=pm.response.json()\r",
+							"console.log(res.items)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "ae9518d1-efc2-4b80-8b26-a9b3ee75d584",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.timbu.cloud/products?organization_id=&Appid=&Apikey=",
+					"protocol": "https",
+					"host": [
+						"api",
+						"timbu",
+						"cloud"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "organization_id",
+							"value": ""
+						},
+						{
+							"key": "Appid",
+							"value": ""
+						},
+						{
+							"key": "Apikey",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Product with invalid param",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d73da421-b0be-4f0b-b24a-f85a49c81eb5",
+						"exec": [
+							"let res=pm.response.json()\r",
+							"console.log(res.items)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "2630f842-e95c-40eb-898a-c08fb96342e9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.timbu.cloud/products?organization_id=87b5kcc3c6b74a2e9702f0e619bb07ee&Appid=Q5UQE24NAYJYR9P&Apikey=a41d510ece2645578f212abdbc49921e2024070506392945341g",
+					"protocol": "https",
+					"host": [
+						"api",
+						"timbu",
+						"cloud"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "organization_id",
+							"value": "87b5kcc3c6b74a2e9702f0e619bb07ee"
+						},
+						{
+							"key": "Appid",
+							"value": "Q5UQE24NAYJYR9P"
+						},
+						{
+							"key": "Apikey",
+							"value": "a41d510ece2645578f212abdbc49921e2024070506392945341g"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d73da421-b0be-4f0b-b24a-f85a49c81eb5",
+						"exec": [
+							"let res=pm.response.json()\r",
+							"console.log(res.items)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "66544414-0018-43b9-ab3c-17cab9e6db35",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.timbu.cloud/products/df79427b6f494dcaa53a9cde2cb37737?organization_id=87b54cc3c6b74a2e9702f0e619bb07ee&Appid=Q5UQE24NAYJYR9P&Apikey=a41d510ece2645578f212abdbc49921e20240705063929453410",
+					"protocol": "https",
+					"host": [
+						"api",
+						"timbu",
+						"cloud"
+					],
+					"path": [
+						"products",
+						"df79427b6f494dcaa53a9cde2cb37737"
+					],
+					"query": [
+						{
+							"key": "organization_id",
+							"value": "87b54cc3c6b74a2e9702f0e619bb07ee"
+						},
+						{
+							"key": "Appid",
+							"value": "Q5UQE24NAYJYR9P"
+						},
+						{
+							"key": "Apikey",
+							"value": "a41d510ece2645578f212abdbc49921e20240705063929453410"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "organization_id",
+			"value": "1ada2a04b1e04a1bbc0b9fe89a2ad973"
+		},
+		{
+			"key": "Appid",
+			"value": "IDS11YCMCY7M2YG"
+		},
+		{
+			"key": "Apikey",
+			"value": "44a38a4342f64d5390450380e462cbef20240713005154024784"
+		},
+		{
+			"key": "resources",
+			"value": "products?organization_id={{organization_id}}&Appid={{Appid}}&Apikey={{Apikey}}"
+		}
+	]
+}
