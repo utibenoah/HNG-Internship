@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "0d603d4b-0481-4913-8078-25c6d2db285f",
+		"name": "Stage4-Tasks: Blog_post_deletion_endpoint",
+		"description": "- **Test APIs implemented by backend developers to ensure they meet the acceptance criteria outlined in the GitHub ticket.**\n    \n- **Validate API functionality, including positive and negative test cases.**\n    \n- **Ensure appropriate status codes (e.g., 200, 201, 400, 404, 500).**\n    \n- **Check for edge cases and boundary conditions.**",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Deleting blog post with valid blog ID, valid request method, and valid Admin ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "51d79000-8a47-4772-a421-53d4f6471f14",
+						"exec": [
+							"let schema= {\r",
+							"    \"message\": String,\r",
+							"    \"status_code\": Number,\r",
+							"}\r",
+							"\r",
+							"pm.test('Validate schema', ()=>{\r",
+							"    pm.response.to.have.jsonSchema(schema)\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "b78c6fd6-46a2-4f08-9a6b-b51f67fd67e1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "/api/v1/blogs/:id",
+					"path": [
+						"api",
+						"v1",
+						"blogs",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleting blog post with valid blog ID, valid request method, and invalid admin ID",
+			"id": "b8bb0560-b4db-415a-a36e-2456b0f02477",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "/api/v1/blogs/:id",
+					"path": [
+						"api",
+						"v1",
+						"blogs",
+						":id"
+					],
+					"variable": [
+						{
+							"id": "5849b781-dfec-4fa9-8bb6-678cf04c748f",
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleting blog post with valid blog ID, invalid request Method, and valid Admin ID",
+			"id": "6190fb8b-4bd5-4c0f-915c-63e6bd8e3c93",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "/api/v1/blogs/:id",
+					"path": [
+						"api",
+						"v1",
+						"blogs",
+						":id"
+					],
+					"variable": [
+						{
+							"id": "5849b781-dfec-4fa9-8bb6-678cf04c748f",
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleting blog post with valid blog ID, invalid request Method and invalid Admin ID",
+			"id": "380611cd-5ca4-4f4c-bfe6-d80db98d71ce",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "/api/v1/blogs/:id",
+					"path": [
+						"api",
+						"v1",
+						"blogs",
+						":id"
+					],
+					"variable": [
+						{
+							"id": "5849b781-dfec-4fa9-8bb6-678cf04c748f",
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleting blog post with invalid blog ID, valid request method, and valid Admin ID",
+			"id": "1be7c449-7879-4f86-8cd2-13ff96968b8f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "/api/v1/blogs/:id",
+					"path": [
+						"api",
+						"v1",
+						"blogs",
+						":id"
+					],
+					"variable": [
+						{
+							"id": "5849b781-dfec-4fa9-8bb6-678cf04c748f",
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleting blog post with invalid blog ID, valid request method, and invalid Admin ID",
+			"id": "6a46aa12-fe26-4972-b62f-12940d84b6fe",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "/api/v1/blogs/:id",
+					"path": [
+						"api",
+						"v1",
+						"blogs",
+						":id"
+					],
+					"variable": [
+						{
+							"id": "5849b781-dfec-4fa9-8bb6-678cf04c748f",
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleting blog post with invalid blog ID, invalid request method, and valid Admin ID",
+			"id": "894afc35-0c04-40ff-b50b-15ae5529b170",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "/api/v1/blogs/:id",
+					"path": [
+						"api",
+						"v1",
+						"blogs",
+						":id"
+					],
+					"variable": [
+						{
+							"id": "5849b781-dfec-4fa9-8bb6-678cf04c748f",
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleting blog post with invalid blog ID, invalid request method, and invalid Admin ID",
+			"id": "f7077194-5e3e-4656-9bfb-67abb34014ad",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "/api/v1/blogs/:id",
+					"path": [
+						"api",
+						"v1",
+						"blogs",
+						":id"
+					],
+					"variable": [
+						{
+							"id": "5849b781-dfec-4fa9-8bb6-678cf04c748f",
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "5af3d5d0-abb9-421b-b503-ce367eb1f0b7",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "bd3a6e9e-3527-442b-9024-6ced3bd161fa",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test('Response time to be below 5000', ()=>{\r",
+					"    pm.expect(pm.response.responseTime).to.be.below(5000)\r",
+					"})"
+				]
+			}
+		}
+	]
+}
