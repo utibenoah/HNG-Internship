@@ -1,0 +1,9 @@
+{
+	"info": {
+		"_postman_id": "8fdad065-955a-448b-a039-b717a10fd348",
+		"name": "Stage4-Tasks:Timbu_shop_app_api_with_new_functionalities",
+		"description": "- Conduct thorough usability and functional testing of the Timbu Shop Apps.\n    \n- Validate UI implementation, responsiveness, and error handling.\n    \n- Test new features added in Stage Four, such as cart management, checkout, payment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": []
+}
