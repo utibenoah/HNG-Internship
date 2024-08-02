@@ -1,0 +1,1482 @@
+{
+	"info": {
+		"_postman_id": "c13b9aca-0a20-4ee7-8c47-7a07eb2d7b10",
+		"name": "Stage5-Tasks:Team Cyborg",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Python----FastAPI Endpoints",
+			"item": [
+				{
+					"name": "Authentications",
+					"item": [
+						{
+							"name": "Google",
+							"item": [
+								{
+									"name": "New Request",
+									"id": "98957f3d-6fca-4ea3-bc2e-217d18a89a4f",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
+								}
+							],
+							"id": "3cbeeeb8-7f83-43bc-b597-484932097641"
+						},
+						{
+							"name": "Register",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "37e92307-d7e3-4efe-ab86-764eabdddbf7",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {\r",
+											"  pm.response.to.have.status(201);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "28a21e1e-cd4c-48dd-ab43-e9ef20bdec79",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"comort\",\r\n  \"password\": \"Emmyy@0011\",\r\n  \"first_name\": \"comfot\",\r\n  \"last_name\": \"lord\",\r\n  \"email\": \"comforttomnyong@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/register"
+							},
+							"response": []
+						},
+						{
+							"name": "Registering user with empty fields",
+							"id": "8fee47ad-6953-4254-acf2-0970a63ee668",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"\",\r\n  \"password\": \"\",\r\n  \"first_name\": \"\",\r\n  \"last_name\": \"\",\r\n  \"email\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/register"
+							},
+							"response": []
+						},
+						{
+							"name": "Registering user with minimum password",
+							"id": "6d9c8f8a-4cff-45ef-91b6-7e166cfd47e0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"Mike004\",\r\n  \"password\": \"Mike\",\r\n  \"first_name\": \"Mikel\",\r\n  \"last_name\": \"lordn\",\r\n  \"email\": \"mikejj@gmail.com.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/register"
+							},
+							"response": []
+						},
+						{
+							"name": "Registering user with  invalid mail format",
+							"id": "e87bab81-1891-4a7f-a376-b00d7e33ca7f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"Mike009p\",\r\n  \"password\": \"Mike@5678l\",\r\n  \"first_name\": \"Mikelk\",\r\n  \"last_name\": \"lordn\",\r\n  \"email\": \"mikejo89@gmail.com.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/register"
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9603b536-aec8-46c0-9d65-eadcd6823002",
+										"exec": [
+											"let res=pm.response.json().data.user\r",
+											"console.log(res)\r",
+											"\r",
+											"pm.collectionVariables.set(\"user_id\", res.id);\r",
+											"\r",
+											"pm.collectionVariables.set(\"user_access_token\", res.access_token);\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "d13e75c1-93d1-457f-81c8-c9336c936f7c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"comforttomnyong@gmail.com\",\r\n  \"password\": \"Amthe@lord1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/login"
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1866a2aa-4e03-4955-8fd6-fa24693df952",
+										"exec": [
+											"\r",
+											"\r",
+											"let res=pm.response.json().data.user.access_token\r",
+											"console.log(res)\r",
+											"pm.collectionVariables.set(\"adminAccessToken\", res);\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "0e28f361-e196-48eb-9cc0-ce1f49e7716f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"admin@gmail.com\",\r\n  \"password\": \"Admin@222\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/login"
+							},
+							"response": []
+						},
+						{
+							"name": "Login valid username & invalid password",
+							"id": "c87c040b-ec01-44f5-854f-abe276faad9b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "Mike001",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Mike@001were",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/login"
+							},
+							"response": []
+						},
+						{
+							"name": "Login invalid username & valid password Copy",
+							"id": "3eb40cfb-ba91-42b1-9366-512403027dd1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "Mike001",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Mike@0011",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/login"
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"id": "a0ec9250-b32d-44c8-8a80-0f9803832126",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6pXVCJ9.eyJ1c2VyX2lkIjoiMDY2YTZiN2UtOGYwNS03NDBjLTgwMDAtNThlMmI5NmFjZmQyIiwiZXhwIjoxNzIyMjI3Nzc1LCJ0eXBlIjoiYWNjZXNzIn0.kKtLAorbAuIfIYUVn_zb9iiG7VOLa1EuqXbIoOQF2tQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/logout"
+							},
+							"response": []
+						},
+						{
+							"name": "Access Token",
+							"id": "d2333b9e-338c-44b7-9021-4978d4c1884a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n     \"email\": \"comforttomnyong@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/request-token"
+							},
+							"response": []
+						},
+						{
+							"name": "Token Refresh",
+							"id": "462d3249-f36b-4dc3-af82-16b036ca9f71",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6pXVCJ9.eyJ1c2VyX2lkIjoiMDY2YTZiN2UtOGYwNS03NDBjLTgwMDAtNThlMmI5NmFjZmQyIiwiZXhwIjoxNzIyMjI3Nzc1LCJ0eXBlIjoiYWNjZXNzIn0.kKtLAorbAuIfIYUVn_zb9iiG7VOLa1EuqXbIoOQF2tQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/logout"
+							},
+							"response": []
+						},
+						{
+							"name": "RegisterSuper Admin",
+							"id": "57793a8f-9d9e-451f-91a7-482e784be600",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"admin@gmail.com\",\r\n  \"password\": \"Admin@222\",\r\n  \"first_name\": \"Super\",\r\n  \"last_name\": \"Admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/register-super-admin"
+							},
+							"response": []
+						},
+						{
+							"name": "Register Super Admin with empty fields",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1aa754a6-4f58-448b-82ca-7f45dd514ae6",
+										"exec": [
+											"pm.test(\"Response status code is 4xx\", function () {\r",
+											"  pm.expect(pm.response.code).to.equal(422);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response time is less than 300ms\", function () {\r",
+											"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "c569eb55-646a-497e-8797-c515f23b482a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"\",\r\n  \"password\": \"\",\r\n  \"first_name\": \"\",\r\n  \"last_name\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/register-super-admin"
+							},
+							"response": []
+						},
+						{
+							"name": "Register Super Admin with invalid email format",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1aa754a6-4f58-448b-82ca-7f45dd514ae6",
+										"exec": [
+											"pm.test(\"Response status code is 4xx\", function () {\r",
+											"  pm.expect(pm.response.code).to.equal(422);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response time is less than 300ms\", function () {\r",
+											"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "31cd24e2-01cf-407e-a4d2-90efba98ec48",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"admingmail.com\",\r\n  \"password\": \"Admin@222\",\r\n  \"first_name\": \"Super\",\r\n  \"last_name\": \"Admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/register-super-admin"
+							},
+							"response": []
+						},
+						{
+							"name": "Register an exiting Super Admin again",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1aa754a6-4f58-448b-82ca-7f45dd514ae6",
+										"exec": [
+											"pm.test(\"Response status code is 4xx\", function () {\r",
+											"  pm.expect(pm.response.code).to.equal(422);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response time is less than 300ms\", function () {\r",
+											"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "0328ee1a-84d8-4dbd-b120-abbe5459a7d3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"admin@gmail.com\",\r\n  \"password\": \"Admin@222\",\r\n  \"first_name\": \"Super\",\r\n  \"last_name\": \"Admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/register-super-admin"
+							},
+							"response": []
+						},
+						{
+							"name": "Verifying sign in token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1aa754a6-4f58-448b-82ca-7f45dd514ae6",
+										"exec": [
+											"pm.test(\"Response status code is 4xx\", function () {\r",
+											"  pm.expect(pm.response.code).to.equal(422);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response time is less than 300ms\", function () {\r",
+											"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "87fd8c69-10eb-44f2-b105-c749c5d96a0d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"comforttomnyong@gmail.com\",\r\n  \"token\": \"870976\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/verify-token"
+							},
+							"response": []
+						},
+						{
+							"name": "Read Admin data",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1aa754a6-4f58-448b-82ca-7f45dd514ae6",
+										"exec": [
+											"pm.test(\"Response status code is 4xx\", function () {\r",
+											"  pm.expect(pm.response.code).to.equal(422);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response time is less than 300ms\", function () {\r",
+											"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "3403584b-4207-4e34-8088-38bcad839475",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMDY2YTdkZWEtNjAwMS03NTRhLTgwMDAtYjFjNTZkNThiZjhiIiwiZXhwIjoxNzIyMjg2NDgwLCJ0eXBlIjoiYWNjZXNzIn0.o_GY-NEP5NMz9SHSD_rtQdtiC80CwXGYaXBYLCqwWrQ"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/admin"
+							},
+							"response": []
+						},
+						{
+							"name": "Read Admin data with invalid token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1aa754a6-4f58-448b-82ca-7f45dd514ae6",
+										"exec": [
+											"pm.test(\"Response status code is 4xx\", function () {\r",
+											"  pm.expect(pm.response.code).to.equal(422);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response time is less than 300ms\", function () {\r",
+											"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "8a5db154-90ef-4ca9-9bae-dd3939bd8303",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMDY2YTdkZWEtNjAwMS03NTRhLTgwMDAtYjFjNTZkNThiZjhiIiwiZXhwIjoxNzIyMjg2NDgwLCJ0eXBlIjoiYWNjZXNzIn0.o_GY-NEP5NMz9SHSD_rtQdtiC80CwXGYaXBYLCqwWrQuthhhf"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/admin"
+							},
+							"response": []
+						},
+						{
+							"name": "Read Admin data with empty token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1aa754a6-4f58-448b-82ca-7f45dd514ae6",
+										"exec": [
+											"pm.test(\"Response status code is 4xx\", function () {\r",
+											"  pm.expect(pm.response.code).to.equal(422);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response time is less than 300ms\", function () {\r",
+											"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "5f3fdf37-1853-47e7-a74f-619e20d599d2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": ""
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/admin"
+							},
+							"response": []
+						},
+						{
+							"name": "Request magic link",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1aa754a6-4f58-448b-82ca-7f45dd514ae6",
+										"exec": [
+											"pm.test(\"Response status code is 4xx\", function () {\r",
+											"  pm.expect(pm.response.code).to.equal(422);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response time is less than 300ms\", function () {\r",
+											"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "05861c44-93a9-45f8-9619-13e788b695dd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"comforttomnyong@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/request-magic-link"
+							},
+							"response": []
+						},
+						{
+							"name": "Request Reset link",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1aa754a6-4f58-448b-82ca-7f45dd514ae6",
+										"exec": [
+											"pm.test(\"Response status code is 4xx\", function () {\r",
+											"  pm.expect(pm.response.code).to.equal(422);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response time is less than 300ms\", function () {\r",
+											"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "97442b5a-8186-44b3-8cb7-16627f14a833",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"user_email\": \"comforttomnyong@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURLPython}}/api/v1/auth/request-password-reset"
+							},
+							"response": []
+						},
+						{
+							"name": "Request Reset with invalid email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1aa754a6-4f58-448b-82ca-7f45dd514ae6",
+										"exec": [
+											"pm.test(\"Response status code is 4xx\", function () {\r",
+											"  pm.expect(pm.response.code).to.equal(422);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response time is less than 300ms\", function () {\r",
+											"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "30367f85-249d-4a7c-9975-205cfd3c2830",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"user_email\": \"comforttomnyong@gmail.com.com.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURLPython}}/api/v1/auth/request-password-reset"
+							},
+							"response": []
+						},
+						{
+							"name": "Process reset password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1aa754a6-4f58-448b-82ca-7f45dd514ae6",
+										"exec": [
+											"pm.test(\"Response status code is 4xx\", function () {\r",
+											"  pm.expect(pm.response.code).to.equal(422);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response time is less than 300ms\", function () {\r",
+											"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "795bd04d-cf5e-48fe-a2d8-2e0246c63fe0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/reset-password?token=ImNvbWZvcnR0b21ueW9uZ0BnbWFpbC5jb20i.Zqo0ww.aTm53BgMRq6Kzzo1-vYzhPQndRU",
+									"protocol": "https",
+									"host": [
+										"deployment",
+										"api-python",
+										"boilerplate",
+										"hng",
+										"tech"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"reset-password"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "ImNvbWZvcnR0b21ueW9uZ0BnbWFpbC5jb20i.Zqo0ww.aTm53BgMRq6Kzzo1-vYzhPQndRU"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Process reset password with invalid link",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1aa754a6-4f58-448b-82ca-7f45dd514ae6",
+										"exec": [
+											"pm.test(\"Response status code is 4xx\", function () {\r",
+											"  pm.expect(pm.response.code).to.equal(422);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response time is less than 300ms\", function () {\r",
+											"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "6bc732b2-1ffd-4515-a93f-f8a710cc8016",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/reset-password?token=ImNvbWZvnR0b21ueW9uZ0BnbWFpbC5jb20i.Zqo0ww.aTm53BgMRq6Kzzo1-vYzhPQndRU",
+									"protocol": "https",
+									"host": [
+										"deployment",
+										"api-python",
+										"boilerplate",
+										"hng",
+										"tech"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"reset-password"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "ImNvbWZvnR0b21ueW9uZ0BnbWFpbC5jb20i.Zqo0ww.aTm53BgMRq6Kzzo1-vYzhPQndRU"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reset password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1aa754a6-4f58-448b-82ca-7f45dd514ae6",
+										"exec": [
+											"pm.test(\"Response status code is 4xx\", function () {\r",
+											"  pm.expect(pm.response.code).to.equal(422);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response time is less than 300ms\", function () {\r",
+											"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "fc8e0fdf-c5fb-45d4-97fc-d2415f35fb69",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"new_password\": \"Amthe@lord1\",\r\n  \"confirm_new_password\": \"Amthe@lord1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/reset-password?token=ImNvbWZvcnR0b21ueW9uZ0BnbWFpbC5jb20i.ZqpD6Q.jGk8y3EvXgx3EpDUwFbJBfJIdYY",
+									"protocol": "https",
+									"host": [
+										"deployment",
+										"api-python",
+										"boilerplate",
+										"hng",
+										"tech"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"reset-password"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "ImNvbWZvcnR0b21ueW9uZ0BnbWFpbC5jb20i.ZqpD6Q.jGk8y3EvXgx3EpDUwFbJBfJIdYY"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reset password with invalid link",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1aa754a6-4f58-448b-82ca-7f45dd514ae6",
+										"exec": [
+											"pm.test(\"Response status code is 4xx\", function () {\r",
+											"  pm.expect(pm.response.code).to.equal(422);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response time is less than 300ms\", function () {\r",
+											"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "6b28f413-b672-445c-9a13-32c67130a51c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"new_password\": \"Amthe@lord1\",\r\n  \"confirm_new_password\": \"Amthe@lord1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://deployment.api-python.boilerplate.hng.tech/api/v1/auth/reset-password?token=ImNvbWZvcnR0b21ueW9uZ0BnbWFpbC5jb20i.ZqpD6Q.jGk8y3EvXgx3EpDUwFbJBfJIdYY",
+									"protocol": "https",
+									"host": [
+										"deployment",
+										"api-python",
+										"boilerplate",
+										"hng",
+										"tech"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"reset-password"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "ImNvbWZvcnR0b21ueW9uZ0BnbWFpbC5jb20i.ZqpD6Q.jGk8y3EvXgx3EpDUwFbJBfJIdYY"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "0b5b47ef-c9e3-404a-bd08-abcf08cf196d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
+					"id": "572547b1-a927-4ac9-84f6-17385d41acd8",
+					"description": "Verifying all the authentication endpoints."
+				},
+				{
+					"name": "Organisation",
+					"item": [
+						{
+							"name": "Create orginsation",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "77f3dc18-73be-4f55-a7e8-282be592aacc",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "e4a749d7-0e93-4a1e-a152-72b7bf470fa4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"company_name\": \"ReelTech\",\r\n  \"company_email\": \"{{Randomemail}}\",\r\n  \"industry\": \"Technology\",\r\n  \"organization_type\": \"Technology\",\r\n  \"country\": \"Nigeria\",\r\n  \"state\": \"Akwa Ibom\",\r\n  \"address\": \"231 Nwaniba\",\r\n  \"lga\": \"Uyo\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURLPython}}/api/v1/organizations",
+									"host": [
+										"{{baseURLPython}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "ReelTech",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Invite",
+							"id": "2a81519a-1ba2-47ba-877b-33f763ae36ba",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{adminAccessToken}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"user_email\": \"admin@gmail.com\",\r\n  \"organization_id\": \"{{organisationId}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURLPython}}/api/v1/invite/create"
+							},
+							"response": []
+						},
+						{
+							"name": "Create Invite invalid credentials",
+							"id": "ec0201da-bb15-4559-bfe2-8fe949dbe1f1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{adminAccessToken}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"user_email\": \"admi@gmail.com\",\r\n  \"organization_id\": \"{{organisationId}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURLPython}}/api/v1/invite/create"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Organisation",
+							"id": "f90473fd-7a2d-4b45-b8ff-6f19f760b6af",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{adminAccessToken}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseURLPython}}/api/v1/organizations"
+							},
+							"response": []
+						}
+					],
+					"id": "0b9f07f8-b4ad-4aed-ba8d-18e9a107c2d6"
+				},
+				{
+					"name": "Activity Log",
+					"item": [
+						{
+							"name": "create activity log",
+							"id": "927f138e-1a97-4104-9cc2-a97ee3635301",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"user_id\": \"{{user_id}}\",\r\n  \"action\": \"meme\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURLPython}}/api/v1/activity-logs/create"
+							},
+							"response": []
+						},
+						{
+							"name": "create activity with invalid details",
+							"id": "d9c7a2e1-51a0-4423-9e7e-28f832cc13b4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"user_id\": \"{{user_id}}\",\r\n  \"action\": \"mememe mememe mememe mememe mememe mememe mememe memem mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe mememe\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURLPython}}/api/v1/activity-logs/create"
+							},
+							"response": []
+						}
+					],
+					"id": "5c6ebdcf-d1a9-4f13-b44c-31606a3571e1"
+				},
+				{
+					"name": "Payment",
+					"item": [
+						{
+							"name": "Get payment for current user",
+							"id": "e7c24a44-c27a-4e88-8558-64cf5d105f7c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{adminAccessToken}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://deployment.api-python.boilerplate.hng.tech/api/v1/payments/current-user?limit=10&page=1",
+									"protocol": "https",
+									"host": [
+										"deployment",
+										"api-python",
+										"boilerplate",
+										"hng",
+										"tech"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payments",
+										"current-user"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "f0f778fe-496d-4d7a-bfeb-3dcfe1f87a6d"
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Create Product",
+							"id": "b9bb7478-a2a9-4087-8c66-b6c218535650",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get all product",
+							"id": "5117c1db-ad4a-40a4-a362-3f04e5cabc96",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
+					"id": "d11f1f1e-79fa-4ff5-be19-5c367eb22f2b"
+				}
+			],
+			"id": "6da71ffc-a661-46b7-a716-a12702f78204"
+		},
+		{
+			"name": "Email",
+			"item": [
+				{
+					"name": "New Request",
+					"id": "95b60571-b921-4b57-856d-f0965db6a4d6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "b9d1a324-fee9-46aa-8a6b-f4e51f531397"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "80d79bac-84e6-4f11-bed3-085b8ee13db4",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "93693f6e-09c3-4b07-a797-39eb56c4fc82",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURLPython",
+			"value": "https://deployment.api-python.boilerplate.hng.tech"
+		},
+		{
+			"key": "user_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "Randomemail",
+			"value": "real@gmail.com",
+			"type": "string"
+		},
+		{
+			"key": "access_token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMDY2YWEyZDgtN2E1Ni03OGVmLTgwMDAtMmU5MTJhYTVkMzFlIiwiZXhwIjoxNzIyNDQxNjM1LCJ0eXBlIjoiYWNjZXNzIn0.G4o7gVDSDRgQz3Up6mSDU_ufRVS487l8jYti4l81eUs",
+			"type": "string"
+		},
+		{
+			"key": "organisationId",
+			"value": "066aa5e2-a2c5-7d01-8000-380c4aba0042",
+			"type": "string"
+		},
+		{
+			"key": "adminAccessToken",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "user_access_token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
